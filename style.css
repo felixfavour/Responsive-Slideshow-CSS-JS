@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+}
+.slider {
+    display: flex;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slider-inner {
+    width: 100vw;
+    height: 100vh;
+}
+.slider-inner img {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hidden {
+    display: none;
+}
