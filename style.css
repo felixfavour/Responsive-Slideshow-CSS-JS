@@ -17,7 +17,29 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: .3s;
+}
+.nextBtn {
+    top: 50%;
+    left: 95%;
+    position: absolute;
+    z-index: 999;
+    transition: .3s;
+}
+.prevBtn {
+    top: 50%;
+    right: 95%;
+    position: absolute;
+    z-index: 999;
+}
+.button:hover{
+    cursor: pointer;
+    color: white;
+    border-radius: 100%;
 }
 .hidden {
     display: none;
+}
+span {
+    font-size: 1.3rem;
 }
