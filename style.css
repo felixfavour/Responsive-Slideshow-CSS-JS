@@ -12,6 +12,7 @@ body {
     height: 100vh;
 }
 .slider-inner img {
+    object-fit: cover;
     width: 100vw;
     height: 100vh;
     display: block;
@@ -42,4 +43,16 @@ body {
 }
 span {
     font-size: 1.3rem;
+}
+.blur {
+    animation: float-right .2s ease-in-out;
+}
+
+@keyframes float-right {
+    from {
+        filter: blur(100px)
+    }
+    to {
+        filter: blur(0px)
+    }
 }
