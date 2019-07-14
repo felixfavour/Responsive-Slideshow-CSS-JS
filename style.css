@@ -24,14 +24,26 @@ body {
     top: 50%;
     left: 95%;
     position: absolute;
-    z-index: 999;
     transition: .3s;
 }
 .prevBtn {
     top: 50%;
     right: 95%;
     position: absolute;
-    z-index: 999;
+    transition: .3s;
+}
+#counter {
+    top: 60%;
+    left: 80%;
+    position: absolute;
+    color: white;
+    font-size: 7rem;
+    font-weight: bolder;
+    font-family: 'Segoe UI';
+}
+.upward {
+    animation: upward .5s ease-in-out;
+    overflow: hidden;
 }
 .button:hover{
     cursor: pointer;
@@ -41,11 +53,19 @@ body {
 .hidden {
     display: none;
 }
-span {
-    font-size: 1.3rem;
-}
 .blur {
-    animation: float-right .2s ease-in-out;
+    animation: float-right .3s ease-in-out;
+}
+
+@keyframes upward {
+    from{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes float-right {

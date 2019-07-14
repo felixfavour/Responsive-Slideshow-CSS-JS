@@ -2,6 +2,7 @@ var nextBtn = document.getElementById("nextBtn");
 var prevBtn = document.getElementById("prevBtn");
 var images = document.getElementsByClassName("slider-inner");
 var hiddenImages = document.getElementsByClassName("hidden");
+var counter = document.getElementById("counter");
 nextBtn.onclick = nextImage;
 prevBtn.onclick = prevImage;
 var lastImage = images.length - 1;
@@ -26,6 +27,7 @@ function nextImage() {
             images[0].classList.add("blur");
         }
     }
+    counterFunc();
 }
 function prevImage() {
     for (var i = 0; i < (images.length); i++) {
@@ -43,5 +45,15 @@ function prevImage() {
             }
         }
     }
+    counterFunc();
 }
+var counterFunc = function () {
+    for (var i = 0; i < images.length; i++) {
+        if (!isHidden(images[i]))
+            counter.innerText = (i + 1).toString();
+        counter.classList.add("upward");
+        var removeAnimation = function () { return counter.classList.remove("upward"); };
+        setTimeout(removeAnimation, 500);
+    }
+};
 //# sourceMappingURL=script.js.map
