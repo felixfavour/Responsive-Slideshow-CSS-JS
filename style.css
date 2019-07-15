@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: black
 }
 .slider {
     display: flex;
@@ -34,16 +35,33 @@ body {
 }
 #counter {
     top: 60%;
-    left: 80%;
+    left: 73%;
     position: absolute;
     color: white;
     font-size: 7rem;
     font-weight: bolder;
     font-family: 'Segoe UI';
+    z-index: 1000;
+    text-shadow: -3px -3px 0 rgba(49, 49, 49, 0.705), 3px -3px 0 rgba(49, 49, 49, 0.705), -3px 3px 0 rgba(49, 49, 49, 0.705), 3px 3px 0 rgba(49, 49, 49, 0.705);
 }
-.upward {
-    animation: upward .5s ease-in-out;
+#slideshowText {
+    top: 73%;
+    left: 76%;
+    position: absolute;
+    color: rgb(192, 189, 189);
+    font-size: 5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1001;
+}
+#slideshowAdditions {
+    position: absolute;
+    background: rgba(49, 49, 49, 0.705);
+    padding: 8rem 10rem;
+    top: 60%;
+    left: 70.5%;
+    transform: rotate(30deg);
     overflow: hidden;
+    border-radius: 10px;
 }
 .button:hover{
     cursor: pointer;
@@ -54,12 +72,23 @@ body {
     display: none;
 }
 .blur {
-    animation: float-right .3s ease-in-out;
+    animation: blur .3s ease-in-out;
+}
+.upward {
+    animation: upward .5s ease-in-out;
+    overflow: hidden;
+    opacity: 0;
+}
+.float-in-right {
+    animation: float-in-right .5s ease-in-out;
+}
+.rand-animation {
+    animation: randAnimation .5s ease-in-out;
 }
 
 @keyframes upward {
     from{
-        transform: translateY(50px);
+        transform: translateY(30px);
         opacity: 0;
     }
     to {
@@ -68,11 +97,55 @@ body {
     }
 }
 
-@keyframes float-right {
+@keyframes randAnimation {
+    from {
+        opacity: 0;
+        transform: rotate(210deg);
+        border-radius: 0px;
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg);
+        border-radius: 50px;
+    }
+}
+
+@keyframes float-in-right {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blur {
     from {
         filter: blur(100px)
     }
     to {
         filter: blur(0px)
+    }
+}
+
+@media only screen and (max-width: 1244px) {
+    #slideshowAdditions {
+        display: none;
+    }
+    #slideshowText {
+        display: none;
+    }
+    #counter {
+        top: 30%;
+        left: 70%;
+        position: absolute;
+        color: white;
+        font-size: 7rem;
+        font-weight: bolder;
+        font-family: 'Segoe UI';
+        z-index: 1000;
+        text-shadow: -3px -3px 0 rgba(49, 49, 49, 0.705), 3px -3px 0 rgba(49, 49, 49, 0.705), -3px 3px 0 rgba(49, 49, 49, 0.705), 3px 3px 0 rgba(49, 49, 49, 0.705);
     }
 }
